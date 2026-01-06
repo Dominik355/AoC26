@@ -1,0 +1,27 @@
+# just work day-01 part1
+work day part:
+    cargo watch -w {{day}} -x "check -p {{day}}" -s "just clippy {{day}}"
+
+# just clippy day-01
+clippy day:
+    cargo clippy -p {{day}}
+
+# just test day-01 part1
+test day part:
+    cargo nextest run -p {{day}} {{part}}
+
+# just bench-all
+bench-all:
+    cargo bench -q > benchmarks.txt
+
+# just bench day-01 part1
+bench day:
+    cargo bench --bench {{day}}-bench >> {{day}}.bench.txt
+
+# just run day-01 part1 12345_session_id_for_aoc_site_54535453
+run day part session:
+    cargo run -p {{day}} --bin {{part}} {{session}}
+
+# just create day-01
+create day:
+    cargo generate --path ./day_template --name {{day}} --define day={{day}}
