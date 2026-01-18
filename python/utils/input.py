@@ -4,12 +4,10 @@ import urllib.request
 
 
 def _load_session_id() -> str:
-    # res = os.getenv("AOC_SESSION_ID")
-    # if not res:
-    #     raise Exception("Set the AOC_SESSION_ID environment variable if you want to download inputs.")
-    # return res
-    return "53616c7465645f5fec7402a6c546f281a1b2aaff63889cec67823e21f4cc5cfa83ce9da7a49091c78ad3f145c8d08ac43f672d844131569e6fbdc9cc071072ed"
-
+    res = os.getenv("AOC_SESSION_ID")
+    if not res:
+        raise Exception("Set the AOC_SESSION_ID environment variable if you want to download inputs.")
+    return res
 
 FIRST_DAY = 1
 LAST_DAY = 12

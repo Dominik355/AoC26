@@ -3,7 +3,6 @@ import inspect
 
 def solution(fun):
     def wrapper(*args, **kwargs):
-        fl = inspect.getfile(fun)
         day = inspect.getfile(fun).split("/")[-1].replace(".py", "")[3:]
         function_name = fun.__name__
 
